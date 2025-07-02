@@ -1,0 +1,15 @@
+
+{
+  "name": "reminder-bot",
+  "version": "1.0.0",
+  "description": "Telegram Reminder Bot with memory",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.43",
+    "node-schedule": "^2.1.1",
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
