@@ -5,10 +5,6 @@ const token = '8040376004:AAFM2iS5At9p4cqz_b7Wo57x_HCjdjDvnYc';
 const bot = new TelegramBot(token, { polling: true });
 
 const reminders = {};
-
-bot.onText(/напомни в (\d{1,2}:\d{2}) (.+)/i, (msg, match) => {
-  console.log('ПОЛУЧЕНО СООБЩЕНИЕ:', msg.text);
-  console.log('match:', match);
   
 bot.onText(/напомни в (\d{1,2}:\d{2}) (.+)/i, (msg, match) => {
   const chatId = msg.chat.id;
