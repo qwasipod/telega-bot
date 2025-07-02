@@ -12,17 +12,17 @@ bot.onText(/напомни в (\d{1,2}:\d{2}) (.+)/i, (msg, match) => {
   const task = match[2];
 
   const [hour, minute] = time.split(':').map(Number);
-  const now = new Date();
-  const date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour - 5, minute);
+  const now = moment().tz('Asia/Almaty');
+  const date = moment().tz(`${hour}:${minute}`, 'HH:mm', 'Asia/Almaty');
 
-  if (date < now) {
-    bot.sendMessage(chatId, `❌ Далбаеб?`);
+ if (date.isBefore(now)) {
+    bot.sendMessage(chatId, `Далбаеб?`);
     return;
   }
 
-  schedule.scheduleJob(date, () => {
-    bot.sendMessage(chatId, `🔔 НАПОМИНАНИЕ ДАЛБАЕБ: ${task}`);
+  schedule.scheduleJob(date.toDate(), () => {
+    bot.sendMessage(chatId, `⏰ ДАЛБАЕБ!!!: ${task}`);
   });
 
-  bot.sendMessage(chatId, `✅ Напомню для тебя далбаеб в ${time}: "${task}"`);
+  bot.sendMessage(chatId, `✅ Окей далбаеб: в ${time} напомню — "${task}"`);
 });
