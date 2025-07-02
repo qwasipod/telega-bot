@@ -1,3 +1,6 @@
+bot.onText(/напомни в (\d{1,2}:\d{2}) (.+)/i, (msg, match) => {
+  console.log('ПОЛУЧЕНО СООБЩЕНИЕ:', msg.text);
+  console.log('match:', match);
 const TelegramBot = require('node-telegram-bot-api');
 const schedule = require('node-schedule');
 
