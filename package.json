@@ -1,0 +1,12 @@
+{
+  "name": "telegram-reminder-bot",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "node-schedule": "^2.1.0",
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
