@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const schedule = require('node-schedule');
 
-const token = process.env.TOKEN;
+const token = '8040376004:AAFM2iS5At9p4cqz_b7Wo57x_HCjdjDvnYc';
 const bot = new TelegramBot(token, { polling: true });
 
 const reminders = {};
