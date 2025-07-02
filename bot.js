@@ -13,7 +13,7 @@ bot.onText(/напомни в (\d{1,2}:\d{2}) (.+)/i, (msg, match) => {
 
   const [hour, minute] = time.split(':').map(Number);
   const now = new Date();
-  const date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour -5, minute);
+  const date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour - 5, minute);
 
   if (date < now) {
     bot.sendMessage(chatId, `❌ Далбаеб?`);
